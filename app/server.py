@@ -60,8 +60,17 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
+    shape = img.shape
+    img = img.resize(torch.Size([shape[0], shape[1]/2, shape[2]/2]))
     prediction = learn.predict(img)[0]
-    return JSONResponse({'result': str(prediction)})
+
+    if str(prediction) == 'food_porn':
+        output = 'That is some sexy food!'
+    elif str(prediction) == 'shitty_food_porn':
+        output = 'Looks shitty to me.'
+    else:
+        output = 'Is that even edible?'
+    return JSONResponse({'result': output})
 
 
 if __name__ == '__main__':
