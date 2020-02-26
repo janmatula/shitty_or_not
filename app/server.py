@@ -65,8 +65,6 @@ async def analyze(request):
     del img_data
     del img_bytes
 
-    shape = img.shape
-    img = img.resize(torch.Size([shape[0], 299, 299]))
     img.show()
     plt.show()
     prediction = learn.predict(img)[0]
