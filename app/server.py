@@ -8,6 +8,7 @@ from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
+import matplotlib.pyplot as plt
 
 export_file_url = 'https://drive.google.com/uc?export=download&id=1-1PuIbdDimmb8LzeMQKhQRtkIqTbEooW'
 export_file_name = 'export.pkl'
@@ -66,6 +67,8 @@ async def analyze(request):
 
     shape = img.shape
     img = img.resize(torch.Size([shape[0], 299, 299]))
+    img.show()
+    plt.show()
     prediction = learn.predict(img)[0]
 
     if str(prediction) == 'food_porn':

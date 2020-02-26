@@ -1,5 +1,5 @@
 body {
-    background-color: #fff;
+    background-color: #262626;
 }
 
 .no-display {
@@ -10,18 +10,21 @@ body {
     margin: auto;
     padding: 10px 50px;
     text-align: center;
-    font-size: 14px;
+    font-size: 30px;
+    width: 40%;
+    color: #fff
 }
 
 .title {
-    font-size: 30px;
+    font-size: 50px;
     margin-top: 1em;
     margin-bottom: 1em;
-    color: #262626;
+    color: #fff;
+    font-weight: bold;
 }
 
 .content {
-    margin-top: 10em;
+    margin-top: 3em;
 }
 
 .analyze {
@@ -30,13 +33,14 @@ body {
 
 .upload-label {
     padding: 10px;
-    font-size: 12px;
+    font-size: 17px;
 }
 
 .result-label {
     margin-top: 0.5em;
     padding: 10px;
-    font-size: 13px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 button.choose-file-button {
@@ -45,8 +49,9 @@ button.choose-file-button {
     border-radius: 2px;
     background-color: #ffffff;
     border: solid 1px #7052CB;
-    font-size: 13px;
+    font-size: 20px;
     color: #7052CB;
+    margin-top: 0.5em;
 }
 
 button.analyze-button {
@@ -55,7 +60,7 @@ button.analyze-button {
     border: solid 1px #7052CB;
     border-radius: 2px;
     background-color: #7052CB;
-    font-size: 13px;
+    font-size: 20px;
     color: #ffffff;
 }
 
