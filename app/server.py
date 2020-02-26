@@ -61,7 +61,10 @@ async def analyze(request):
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
     shape = img.shape
-    img = img.resize(torch.Size([shape[0], int(shape[1]/2), int(shape[2]/2)]))
+    if (shape[0] + shape[1])>1200:
+        img = img.resize(torch.Size([shape[0], int(shape[1]/2), int(shape[2]/2)]))
+    if (shape[0] + shape[1])>1200:
+        img = img.resize(torch.Size([shape[0], int(shape[1]/2), int(shape[2]/2)]))
     prediction = learn.predict(img)[0]
 
     if str(prediction) == 'food_porn':
