@@ -60,11 +60,10 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
 
-    img_bytes = 0
     img = open_image(BytesIO(img_bytes))
     del img_data
     del img_bytes
-    
+
     shape = img.shape
     while (shape[0] + shape[1])>1300:
         img = img.resize(torch.Size([shape[0], int(shape[1]/2), int(shape[2]/2)]))
