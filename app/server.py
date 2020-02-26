@@ -65,7 +65,7 @@ async def analyze(request):
     del img_bytes
 
     shape = img.shape
-    img = img.resize(torch.Size([shape[0], 299, 299)
+    img = img.resize(torch.Size([shape[0], 299, 299)])
     prediction = learn.predict(img)[0]
 
     if str(prediction) == 'food_porn':
